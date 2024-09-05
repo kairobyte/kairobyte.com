@@ -19,13 +19,15 @@ async function submit() {
   const email = document.getElementById("email").value;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var isCorrect = emailPattern.test(email);
-  console.log(isCorrect);
+  //console.log(Date.now());
+  //console.log(isCorrect);
   if (isCorrect){
     try {
-      const docRef = await addDoc(collection(db, "emails"), {
+      const docRef = await addDoc(collection(db, "pre-signup"), {
         email: email,
+        time: Date.now(),
       });
-      console.log("Document written with ID: ", docRef.id);
+      //console.log("Document written with ID: ", docRef.id);
       var submitted = true;
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -34,6 +36,9 @@ async function submit() {
       document.getElementById("out-sucess").style.display = 'inline';
       document.getElementById("out-error").style.display = 'none';
       document.getElementById("out-sucess").innerHTML = "E-mail submitted sucessfully!!";
+      document.getElementById("email").style.display = 'none';
+      document.getElementById("submit").style.display = 'none';
+      document.getElementById("submit-another").style.display = 'inline';
     } else {
       document.getElementById("out-error").style.display = 'inline';
     }
@@ -44,3 +49,10 @@ async function submit() {
     document.getElementById("out-error").innerHTML = "Enter a valid E-mail!!";
   }
 }
+
+document.getElementById("submit-another").addEventListener("click", function() {
+  document.getElementById("email").style.display = 'inline';
+  document.getElementById("email").value = "";
+  document.getElementById("submit").style.display = 'inline';
+  document.getElementById("submit-another").style.display = 'none';
+})
