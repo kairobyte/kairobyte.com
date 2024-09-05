@@ -10,44 +10,33 @@ body{
   font-family: "Poppins", sans-serif;
 }
 
-.container{
+.header-container{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
-.child{
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
-  justify-content: center;
-  padding: 40px;
-  border: 2px solid black;
+.nav-logo{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
 }
 
-
-#email{
-  font-size: large;
+.kb{
+  font-size: 40px;
+  color: #3FA9F5;
 }
 
-#submit{
-  font-size: large;
+.nav-contents li{
+  display: inline;
+  text-decoration: none;
+  color: #000000;
+  margin: 20px;
+  font-weight: 500;
 }
 
-#out-sucess{
-  display: none;
-  text-align: center;
-  color: white;
-  background-color: #5cb85c;
-  padding: 5px 10px;
-}
-#out-error{
-  display: none;
-  text-align: center;
-  color: white;
-  background-color: #da3338;
-  padding: 5px 10px;
+.nav-contents a{
+  color: #000000;
+  text-decoration: none;
 }
