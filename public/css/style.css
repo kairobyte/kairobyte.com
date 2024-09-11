@@ -11,7 +11,7 @@ html{
 }
 
 body{
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
 
@@ -51,12 +51,13 @@ body::-webkit-scrollbar{
 #nav-content-id.vis{
   display: block;
 }
-
 .nav-contents li{
   display: inline;
   flex-direction: column;
   text-decoration: none;
   color: #000000;
+}
+.nav-contents a{
   margin: 20px;
   font-weight: 500;
 }
@@ -92,11 +93,11 @@ body::-webkit-scrollbar{
 #main-body, #objectives{
   display: flex;
   flex-direction: row;
-  height: 90vh;
-  min-height: 500px;
+  min-height: 700px;
   width: 100vw;
   align-items: center;
   justify-content: center;
+  padding: 60px 0px;
 }
 
 .body-container{
@@ -178,7 +179,6 @@ body::-webkit-scrollbar{
 
 #note{
   position: absolute;
-  top: 1250px;
   width: 100%;
   padding: 10px 20px;
   font-weight: bold;
@@ -194,7 +194,6 @@ body::-webkit-scrollbar{
 
   .nav-contents{
     display: none;
-    animation: slideFromTop 0.1s ease-in 0s 1 alternate none;
   }
   .nav-contents ul {
     display: flex;
@@ -207,11 +206,6 @@ body::-webkit-scrollbar{
 
   #open{
     display: block;
-  }
-
-  #main-body, #objectives{
-    flex-direction: column;
-    max-height: 600px;
   }
 
   .body-container{
@@ -229,18 +223,5 @@ body::-webkit-scrollbar{
   }
   .scroll-container{
     display: none;
-  }
-  #note{
-    position: absolute;
-    top: 1050px;
-  }
-}
-
-@keyframes slideFromTop {
-  from{
-    transform: translateY(-50px);
-  }
-  to{
-    transform: translateY(0px);
   }
 }
