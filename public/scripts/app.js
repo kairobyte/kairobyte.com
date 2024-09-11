@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/fireba
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDxB41poaIYO39f6I6eotJrYGT1A-3IxF0",
+  apiKey: "AIzaSyDxB41poaIYO39f6I6eotJrYGT1A-3IxF0",    //now before you get furious, I reassure you that apiKey needs to be public for functioning
   authDomain: "kairobyte.firebaseapp.com",
   projectId: "kairobyte",
   storageBucket: "kairobyte.appspot.com",
