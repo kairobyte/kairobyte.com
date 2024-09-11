@@ -6,6 +6,10 @@
   margin: 0;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
@@ -20,7 +24,6 @@ body::-webkit-scrollbar{
   display: flex;
   position: fixed;
   width: 100vw;
-  align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   background-color: 	#d5cdf3;
@@ -35,6 +38,18 @@ body::-webkit-scrollbar{
 .kb{
   font-size: 40px;
   color: #3FA9F5;
+}
+
+.nav-contents{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#nav-content-id.inv{
+  display: none;
+}
+#nav-content-id.vis{
+  display: block;
 }
 
 .nav-contents li{
@@ -58,9 +73,27 @@ body::-webkit-scrollbar{
   text-decoration: none;
 }
 
-#main-body{
+.nav-options{
+  /* background-color: green; */
+  position: absolute;
+  cursor: pointer;
+  display: none;
+
+  right: 20px;
+}
+.nav-options-img{
+  height: 40px;
+}
+#open, #close{
+  display: none;
+}
+
+
+#main-body, #objectives{
   display: flex;
+  flex-direction: row;
   height: 90vh;
+  min-height: 500px;
   width: 100vw;
   align-items: center;
   justify-content: center;
@@ -74,6 +107,8 @@ body::-webkit-scrollbar{
   width: 100vw;
   max-width: 1400px;
   background-color: #f6f6f6;
+  padding: 10px 20px;
+  margin: 10px 20px;
 }
 
 .body-child{
@@ -84,10 +119,12 @@ body::-webkit-scrollbar{
   max-width: 500px;
   min-height: 200px;
   text-align: justify;
+  text-align: center;
 }
 
 .body-child h1{
   font-size: 25px;
+  margin: 10px 20px;
 }
 .body-child h3{
   font-size: 18px;
@@ -112,18 +149,6 @@ body::-webkit-scrollbar{
   color: black;
 }
 
-/* .scroll{
-  bottom: 10px;
-  right: 20px;
-} */
-
-#objectives{
-  display: flex;
-  height: 90vh;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-}
 
 .obj-container{
   display: flex;
@@ -131,24 +156,89 @@ body::-webkit-scrollbar{
   justify-content: space-around;
   width: 100vw;
   max-width: 1400px;
+
+  padding: 10px 20px;
+  margin: 10px 20px;
 }
 .obj-container h3{
   font-weight: 300;
   font-size: 16px;
 }
-.obj-container span li{
-  
-}
 
 .obj-container span{
   text-align: justify;
   max-width: 600px;
+  text-align: justify;
+  margin: 10px 20px;
 }
 .obj-img{
   max-height: 400px;
 }
 
 #note{
+  position: absolute;
+  top: 1050px;
+  width: 100%;
   padding: 10px 20px;
   font-weight: bold;
+  background-color: #d8b2ff;
+}
+
+@media screen and (max-width: 800px){
+  
+  .header-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-contents{
+    display: none;
+    animation: slideFromTop 0.1s ease-in 0s 1 alternate none;
+  }
+  .nav-contents ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-options{
+    display: block;
+  }
+
+  #open{
+    display: block;
+  }
+
+  #main-body, #objectives{
+    flex-direction: column;
+    max-height: 600px;
+  }
+
+  .body-container{
+    flex-direction: column-reverse;
+  }
+  .obj-container{
+    flex-direction: column;
+  }
+  .body-img{
+    height: 150px;
+  }
+  .obj-img{
+    height: 150px;
+    display: none;
+  }
+  .scroll-container{
+    display: none;
+  }
+  #note{
+    position: absolute;
+  }
+}
+
+@keyframes slideFromTop {
+  from{
+    transform: translateY(-50px);
+  }
+  to{
+    transform: translateY(0px);
+  }
 }
