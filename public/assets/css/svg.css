@@ -1,0 +1,10 @@
+.home-svg{
+    height: 540px;
+}
+
+.home-svg svg{
+    height: 100%;
+    max-width: 640px;
+}
+
+
