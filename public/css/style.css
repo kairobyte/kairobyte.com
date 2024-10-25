@@ -199,6 +199,9 @@ body::-webkit-scrollbar{
     display: flex;
     flex-direction: column;
   }
+  .nav-contents li {
+    padding: 10px 20px;
+  }
 
   .nav-options{
     display: block;
