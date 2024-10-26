@@ -204,3 +204,29 @@
 .offer-tile p {
     font-size: 1.2rem;
 }
+
+@media screen and (max-width: 992px){
+    .home{
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .home-svg svg{
+        width: 80vw;
+    }
+    .home-description{
+        align-items: center;
+        text-align: center;
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .offer-grid-container{
+        grid-template-columns: repeat(auto-fit, 96vw);
+    }
+    .offer-tile{
+        width: 100%;
+        /* background-color: green; */
+    }
+}

@@ -138,9 +138,9 @@ button:active{
 }
 
 footer{
-  background-color: #0abab5;
-  height: 400px;
-  font-weight: 700;
+  background-color: #1f1f1e;
+  padding: 40px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,19 +149,33 @@ footer{
   width: 80vw;
   max-width: var(--max-width);
   height: 100%;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  gap: 40px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 60px;
   /* background-color: pink; */
   color: #fff;
   padding: 40px;
 }
-.footer-links{
+.footer-links, .footer-social-links {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-align: left;
+}
+.footer-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.social-links-img{
+  width: 14px;
 }
 .footer-img{
   height: 200px;
@@ -170,9 +184,12 @@ footer{
   color: #fff;
 }
 .footer-container input {
-  padding: 8px 12px;
-  min-width: 300px;
-  font-size: var(--h3-size);
+  padding: 8px 8px;
+  width: 100%;
+  font-size: var(--h4-size);
+}
+footer button{
+  font-size: 0.8rem;
 }
 
 @media screen and (max-width: 768px){
@@ -182,6 +199,8 @@ footer{
   .section{
       width: 95vw;
       margin: 20px 40px;
+      gap: 0px;
+      /* background-color: green; */
   }
   .section-nav{
       width: 95vw;
@@ -189,4 +208,16 @@ footer{
   }
 }
 
+@media screen and (max-width: 576px){
+  html{
+    font-size: 14px;
+  }
+  footer{
+    padding: 40px 0px;
+  }
+  .footer-container{
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, 80vw);
+  }
+}
 
